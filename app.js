@@ -93,7 +93,13 @@ const createSlider = () => {
     sliderContainer.appendChild(item)
   })
   // if else statement for duration 
-  if (duration > 1) {
+  if (duration > 999) {
+    changeSlide(0)
+    timer = setInterval(function () {
+      slideIndex++;
+      changeSlide(slideIndex);
+    }, duration);
+  } else if (duration > 1 ) {
     changeSlide(0)
     timer = setInterval(function () {
       slideIndex++;
